@@ -29,13 +29,13 @@ public class ControleContato {
 	@Autowired
 	private ContatoRepository repo;
 
-	//@CrossOrigin("http://localhost:4200")
-	@GetMapping("/all")
+	@CrossOrigin("http://localhost:4200")
+	@GetMapping("/todos")
 	public @ResponseBody List<Contato> findAll() {
 		return this.repo.findAll();
 	}
 
-	@GetMapping("/all/{id}")
+	@GetMapping("/todos/{id}")
 	public Contato findById(@PathVariable(value = "id") long id) {
 		return this.repo.findById(id).orElse(null);
 	}
